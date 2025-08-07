@@ -1,0 +1,61 @@
+------------------------------------------------------------
+Date       : 07 Aug 2025 15:52:36
+Release    : Oracle REST Data Services 25.2.1.r1942034
+Type       : ORDS Install
+Database   : Oracle Database 23c Free 
+DB Version : 23.3.0.23.09
+------------------------------------------------------------
+Container Name: ORCL
+Executing scripts for core
+------------------------------------------------------------
+
+[*** script: ords_prereq_env.sql] 
+
+INFO: Checking prerequisites for Oracle REST Data Services
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+INFO: Prerequisites verified.
+
+[*** script: ords_verify_tablespace.sql] 
+
+PL/SQL procedure successfully completed.
+
+[*** script: ords_alter_session_script.sql] 
+
+PL/SQL procedure successfully completed.
+
+[*** script: ords_create_rest_users.sql] 
+
+PL/SQL procedure successfully completed.
+
+[*** script: ords_alter_session_script.sql] 
+
+PL/SQL procedure successfully completed.
+
+[*** script: ords_create_schema.sql] 
+INFO: Creating schema for Oracle REST Data Services
+
+PL/SQL procedure successfully completed.
+
+INFO: Created schema ORDS_METADATA
+[*** script: ords_grant_privs.sql] 
+INFO: Grant object and system privileges to ORDS owner
+declare
+*
+ERROR at line 1:
+ORA-01031: insufficient privileges
+ORA-06512: at line 71
+
+https://docs.oracle.com/error-help/db/ora-01031/
+
+
+More Details :
+https://docs.oracle.com/error-help/db/ora-01031/
+https://docs.oracle.com/error-help/db/ora-06512/
