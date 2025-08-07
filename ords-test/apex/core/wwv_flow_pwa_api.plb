@@ -1,0 +1,35 @@
+set define '^' verify off
+prompt ...wwv_flow_pwa_api.plb
+create or replace package body wwv_flow_pwa_api wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+a1f 29d
+bCuGpH42EmtdeaDGHVNLMG37CwUwg1Vc2ScefC/Ngw9rAR1sbZiyYoWbtIjlheUcspP0SNFx
+U1Di7JpkO1T0fsYYDCxQJ8FYgoDsgsbxGopBK2ebRbT3c/k9c3O1NL+W+En+0pvQaZBjK95E
+glSZwuiDoQqx3AVxggLC8IcXGpMlzD6tZYNAdm82RPOft9Yn8USJd8CEYQWA6psjHiF8ClCK
+pz3u/W0TSpUnadxQsi+dq6eA5bTs5SShp2FfVnoH4QuNEXs7rWn3a//ATWnOaC2OeMD6PN25
+kOJLVAFSQ/MUxPVYEa2jjLkgu2AtE1KzDpMP9RhiK4jjBjR91SQEJic5AlxnRXHLW01NsqdV
+PCPgZzgQ/w5mYTEdmcNSC8sC+1wJOQDllRKLtP2PAQHx/BRbrSbmqvFSr6JkvHBmsTrKPYVQ
+yyvkn4Q2xTittanai+eBhOT3SAH1OCFsCwQ64tl6ynSryxfX0y/5lfIFJoFnqe/23H6UT714
+w1xwSkQPj0saULuq2tF6q3+4DjtbklR0q4UeNXlW1HQhgXUvHnm0H05L7j5vuS0DrHRzKfso
+b1ZZFponEuGkTYa7IkxE4Y4qVU+vjo7KdAnilto/QJoXBYwuSgVT9VO+0b2erpsq5aA6ME5A
+4erqIIfZbS8=
+
+/
+show errors

@@ -1,0 +1,391 @@
+#!/bin/bash
+########################################################################
+#  (@)ords.sh
+#
+#  Copyright 2022 by Oracle Corporation,
+#  500 Oracle Parkway, Redwood Shores, California, 94065, U.S.A.
+#  All rights reserved.
+#
+#  This software is the confidential and proprietary information
+#  of Oracle Corporation.
+#
+# NAME	ORDS
+#
+# DESC 	This script starts ORDS Command Line
+#
+# USAGE ords [--debug] <arguments>
+#
+# OPTIONS
+#
+# --debug           Enable JDWP remote debugging. Also force verbose mode.
+#
+# ENVIRONMENT VARIABLE OVERRIDES
+#
+# ${DEBUG_SUSPEND}: Use 'y' to suspend process on startup, default is 'n'.
+# ${DEBUG_PORT}   : JDWP listen port, default is 8000
+# ${JVM_TIMEZONE} : Override the timezone used by JVM, default is UTC
+#
+# AUTHOR bamcgill
+#
+# MODIFIED
+#   bamcgill    04/10/2022  Restrict startup to a minimum of java 11
+#   bamcgill    24/03/2022  Expand variables at run function as it breaks quoted variable substitution
+#   cdivilly    13/01/2022  Execute ords.war
+#   bamcgill    12/01/2022  Created
+########################################################################
+
+AddVMOption()
+{
+
+  APP_VM_OPTS[${#APP_VM_OPTS[*]}]="$*"
+}
+#
+#Env variables set by --java-options
+#
+AddJavaOption()
+{
+  JAVA_VM_OPTS[${#APP_VM_OPTS[*]}]="$*"
+}
+#
+# set up the main arguments for java.
+#
+function setupArgs {
+	#
+	# Standard JVM options which are always used
+	#
+	AddVMOption -Djava.awt.headless=true
+  if [[ $JAVA_INUSE_VER -ge 21 ]]; then
+      AddVMOption --add-exports=java.base/jdk.internal.foreign=ALL-UNNAMED
+  fi
+
+	AddVMOption -Doracle.dbtools.cmdline.ShellCommand=ords
+
+	if test "m$(uname -s)" = "mHP-UX"
+	then
+	   AddVMOption -d64
+	fi
+
+  # force timezone to UTC, but allow override
+  if [ -z ${JVM_TIMEZONE+x} ]; then AddVMOption -Duser.timezone=UTC; else AddVMOption -Duser.timezone=${JVM_TIMEZONE}; fi
+
+  # Ignore Unrecognized VM Options 
+  AddVMOption -XX:+IgnoreUnrecognizedVMOptions
+}
+
+#
+# Set ORDS_HOME to be canonical paths
+#
+function setupORDSHome {
+	#
+	# resolve the folder where this script is located, traversing any symlinks
+	#
+	PRG="$0"
+	# loop while $PRG is a symlink
+	while [ -h "$PRG" ] ; do
+	  # figure out target of the symlink
+	  ls=`ls -ld "$PRG"`
+	  link=`expr "$ls" : '.*-> \(.*\)$'`
+	  # traverse to the target of the symlink
+	  if expr "$link" : '/.*' > /dev/null; then
+	  PRG="$link"
+	  else
+	  PRG=`dirname "$PRG"`"/$link"
+	  fi
+	done
+
+	#
+	# ORDS_HOME is where we live.  Lets get an exact address.
+	# ords script is in ${ORDS_HOME}/bin so lets check above and get the
+	# canonical path for that
+	#
+	ORDS_HOME=`dirname "$PRG"`/..
+	export ORDS_HOME=`cd "${ORDS_HOME}" > /dev/null && pwd`
+
+	AddVMOption "-Doracle.dbtools.cmdline.home=${ORDS_HOME}"
+}
+
+#
+# Setting the launcher name so we can fire up the launcher later.
+function setupORDSWar {
+ORDS_WAR=$(cd "${ORDS_HOME}" > /dev/null && ls *.war)
+}
+#
+# Check if JAVA_HOME is set and if so, make sure we run the java there.
+#
+function checkJavaLocation {
+
+#Test for JAVA_HOME settings.  If it is set, we want to use it over and above what /usr/bin/java says
+JAVA=java
+ if [  "m$JAVA_HOME" != "m" ]; then
+   if [ -d "$JAVA_HOME" ];
+   then
+ 	JAVA="${JAVA_HOME}/bin/java";
+ 	fi
+  fi
+   # If you have downloaded a jre, dropping it into ords as jre will make it first in line
+  if [ -d "$ORDS_HOME/jre/" ]; then
+	 JAVA_HOME="$ORDS_HOME/jre/"
+	 PATH="$JAVA_HOME/bin:$PATH"
+         JAVA="$JAVA_HOME/bin/java"
+  fi
+  JAVA_INUSE=$(${JAVA} -XX:+IgnoreUnrecognizedVMOptions -version 2>&1 | awk -F\" '/version "[0-9]+[^"]*"/ {print $2}')
+  JAVA_INUSE_VER=$(echo $JAVA_INUSE | awk -F\. '{print $1}')
+}
+
+
+#
+# figure out why locale settings are done in the terminal.
+# we're supporting these formats
+#    en
+#    en_US
+#    en_US.UTF-8
+#    en_US.UTF-8@modifier
+#    en.UTF-8
+#    en.UTF-8@modifier
+#    en@modifier
+#    en_US@modifier
+#
+function checkLanguageSettings {
+# Use LC_MESSAGE if set; otherwise, use LANG
+  local TMPLANG=${LC_MESSAGE:-${LANG}}
+  # echo ${TMPLANG}
+    if [ ! -z "${TMPLANG}" ] ; then
+        local IFS=@
+        set -- $TMPLANG
+        if [ ! -z  $2 ]; then
+         local ORDS_MODIFIER=$2
+        fi
+        local IFS=.
+        set -- $1
+        if [ ! -z $2 ]; then
+         local ORDS_ENCODING=$2
+        fi
+        local IFS=_
+        set -- $1
+        if [ ! -z $2 ]; then
+         local ORDS_TERRITORY=$2
+        fi
+        local ORDS_LANG=$1
+        if [ "${ORDS_LANG}" = "C" -o "${ORDS_LANG}" = "POSIX" ]
+        then
+           # for straight C/POSIX, drop in ascii with us english
+            ORDS_LANG="en"
+            ORDS_TERRITORY="US"
+           if [ ! -z ${ORDS_ENCODING} ]
+           then
+             ORDS_ENCODING=UTF8
+           fi
+        fi
+        if [ ! -z "${ORDS_LANG}" ] ; then
+           AddVMOption -Duser.language=${ORDS_LANG}
+        fi
+
+        if [ ! -z "${ORDS_TERRITORY}" ] ; then
+          AddVMOption -Duser.region=${ORDS_TERRITORY}
+        fi
+
+        if [ ! -z "${ORDS_ENCODING}" ] ; then
+           AddVMOption -Dfile.encoding=${ORDS_ENCODING}
+        fi
+   fi
+}
+
+
+
+
+#
+# if we have a debug flag, we want to remove it, but also tell java
+# to switch on debugging. Hence we'll need a new array to pass to java
+#
+function processArgs {
+ id=0;
+ ISDEBUG=0;
+
+ JDWP_PORT="8000"
+
+ if [ -z ${DEBUG_PORT+x} ]; then JDWP_PORT="8000"; else JDWP_PORT="$DEBUG_PORT"; fi
+ if [ -z ${DEBUG_SUSPEND+x} ]; then SUSPEND_FLAG="n"; else SUSPEND_FLAG="$DEBUG_SUSPEND"; fi
+
+ for var
+ do
+    if [ "${var}" != '--debug' ]
+    then
+      ARGS[id]="${var}";
+      let id++;
+    else
+      ISDEBUG=1;
+    fi
+ done
+ if [ $ISDEBUG == 1 ]
+ then
+    ORDS_DEBUG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=${SUSPEND_FLAG},address=${JDWP_PORT}"
+    ORDS_VERBOSE="--verbose"
+    echo "NOTE: DEBUG PORT: ${JDWP_PORT}  ,  DEBUG SUSPEND: ${SUSPEND_FLAG} "
+ else
+    ORDS_DEBUG=""
+    ORDS_VERBOSE=""
+ fi
+}
+
+#
+# Run the tool.
+#
+function run {
+
+ rpmPathConfig $@
+
+ CMDLINE="${JAVA} ${APP_VM_OPTS[@]} ${ORDS_DEBUG} ${JAVA_VM_OPTS[@]} -jar ${ORDS_HOME}/${ORDS_WAR} ${ORDS_VERBOSE} $@ "
+ if  [  "m$ORDS_DEBUG" != "m" ]; then
+   echo "CWD=${PWD}"
+   echo "ORDS_HOME=${ORDS_HOME}"
+   echo "${CMDLINE}"
+ fi
+ if [ "$RPM_CONFIGPATH" == TRUE ]; then
+   ${JAVA} "${APP_VM_OPTS[@]}" ${ORDS_DEBUG}  ${JAVA_VM_OPTS[@]} -jar "${ORDS_HOME}"/${ORDS_WAR} ${ORDS_VERBOSE} --config /etc/ords/config "$@"
+ else
+   ${JAVA} "${APP_VM_OPTS[@]}" ${ORDS_DEBUG} ${JAVA_VM_OPTS[@]}  -jar "${ORDS_HOME}"/${ORDS_WAR} ${ORDS_VERBOSE} "$@"
+ fi
+}
+
+# If ORDS was installed by RPM and --config is not present as an option
+# set /etc/ords/config as the default folder.
+function rpmPathConfig {
+  echo "${@}" | grep '\--config' > /dev/null 2>&1
+  if test "m$?" != "m0"; then
+    CHECK_RPM_ORDS_HOME=TRUE
+    # Check if _JAVA_OPTIONS contains config.url
+    if  [  "m$_JAVA_OPTIONS" != "m" ]; then
+        echo "${_JAVA_OPTIONS}" | grep 'config.url' > /dev/null 2>&1
+        if test "m$?" == "m0"; then
+            CHECK_RPM_ORDS_HOME=FALSE
+        fi
+    fi
+    # Check if JDK_JAVA_OPTIONS contains config.url
+    if  [  "m$JDK_JAVA_OPTIONS" != "m" ]; then
+        echo "${JDK_JAVA_OPTIONS}" | grep 'config.url' > /dev/null 2>&1
+        if test "m$?" == "m0"; then
+            CHECK_RPM_ORDS_HOME=FALSE
+        fi
+    fi
+    # Check if JAVA_OPTIONS contains config.url
+    if  [  "m$JAVA_OPTIONS=" != "m" ]; then
+        echo "${JAVA_OPTIONS=}" | grep 'config.url' > /dev/null 2>&1
+        if test "m$?" == "m0"; then
+            CHECK_RPM_ORDS_HOME=FALSE
+        fi
+    fi
+    if [ "$CHECK_RPM_ORDS_HOME" == TRUE ]; then
+        rpm -qf ${ORDS_HOME} > /dev/null 2>&1
+        if test "m$?" = "m0" ; then
+          if [ -d "/etc/ords/config" ]; then
+            # Add the --config to default RPM path (/etc/ords/config
+              echo "$(date -u +"%Y-%m-%dT%H:%M:%SZ") INFO   ORDS has not detected the option '--config' and this will be set up to the default directory."
+              RPM_CONFIGPATH=TRUE
+          fi
+        fi
+    fi
+  fi
+}
+
+#
+# This is where we start ORDS properly. We're going to process the arguments
+# sent in, build our classpath, build our JVM options, prepare the terminal
+# and kick off the main.
+#
+function bootStrap {
+	echo "$@" | grep '\--debug' > /dev/null 2>&1
+	if test "m$?" != "m0"
+	then
+		#if it is not debug we can pass the arguments straight through
+		#runNormalArgs
+ 		run "$@"
+	   exit $?
+	else
+		# Process the arguments and see if we have are in debug mode
+		processArgs "$@"
+		#
+		# if you want to see what is getting passed, uncomment the next line
+		#runModifiedArgs
+		run "${ARGS[@]}"
+	fi
+}
+
+# Function to extract Java options from command line arguments
+getJavaOptions() {
+    found_java_options=false
+    for arg in "$@"; do
+        if [ "$found_java_options" = true ]; then
+            echo "$arg"
+            break
+        fi
+
+        if [ "$arg" = "--java-options" ]; then
+            found_java_options=true
+        fi
+    done
+}
+
+# Function to set Java options
+setJavaOptions() {
+    if [[ "$*" == *"--java-options"* ]]; then
+        java_options=$(getJavaOptions "$@")
+        JAVA_OPTIONS=$java_options
+        ords_args=()
+        # loop throught the arguments and remove the jvm options & --java-options
+        for arg in "$@"; do
+          if [[ "$arg" != "--java-options" && "$arg" != "$JAVA_OPTIONS" && "$JAVA_OPTIONS" != "" ]]; then
+            ords_args+=("$arg")
+          fi
+        done
+        ########## Handle additional Debug options in --java-options ###################
+            #Handle DEBUG_PORT
+            while [[ $java_options =~ DEBUG_PORT=[^[:space:]]+ ]]; do
+              # Catch the value of DEBUG_PORT
+              DEBUG_PORT=$(echo "${BASH_REMATCH[0]}" | sed -e 's/DEBUG_PORT=//')
+              #remove DEBUG_PORT=$value<space> (the additional spaces if exists will be removed to not affect case
+              #sensitive JVM options like config.url
+              java_options=$(echo "$java_options" | sed -e 's/DEBUG_PORT=[^[:space:]]*[[:space:]]*//')
+            done
+            #Handle DEBUG_SUSPEND
+            while [[ $java_options =~ DEBUG_SUSPEND=[^[:space:]]+ ]]; do
+              #Catch the value of DEBUG_SUSPEND
+              DEBUG_SUSPEND=$(echo "${BASH_REMATCH[0]}" | sed -e 's/DEBUG_SUSPEND=//')
+              #remove DEBUG_SUSPEND=$value<space> (the additional spaces if exists will be removed to not affect case
+              #sensitive JVM options like config.url
+              java_options=$(echo "$java_options" | sed -e 's/DEBUG_SUSPEND=[^[:space:]]*[[:space:]]*//')
+            done
+            java_options=$(echo "$java_options" | xargs)
+        ##################################################################################
+        echo " "
+        echo -e "NOTE: Picked up --java-options : ${java_options}"
+        AddJavaOption ${java_options}
+    fi
+}
+
+
+setupORDSHome
+setupORDSWar
+setJavaOptions "$@"
+checkJavaLocation
+checkLanguageSettings
+setupArgs
+
+
+
+
+
+
+if [[ $JAVA_INUSE_VER -ge 17 ]]; then
+        if [ -z ${ords_args+x} ];
+        then bootStrap "$@";
+        else bootStrap "${ords_args[@]}";
+        fi
+
+else
+        echo
+        echo "Error: ORDS requires Java 17 and above to run."
+        echo "       Found Java version ${JAVA_INUSE}."
+        echo "       Please set JAVA_HOME to appropriate version and update PATH if necessary."
+        echo
+        exit 1
+fi

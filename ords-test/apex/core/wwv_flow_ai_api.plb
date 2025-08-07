@@ -1,0 +1,43 @@
+set define off verify off
+prompt ...wwv_flow_ai_api
+create or replace package body wwv_flow_ai_api wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+161b 4d4
+x8PQ0a+ZwkvJ7JB2qdrb7IWyYr0wg81UNSCDfI4ZWA/3hGxn5naf6RORboBL/LTeimcxleXo
+3OUheV7EYaqqYYSskLTYpFDAEdxdOjo67bv45OBeys/0ZVqLelUUrq7Q/AX+T678i9xV5EUM
+yATbQemVSxRubKIWcBHcqKSJygrxKWlu4eAdABLLiDjWoiQegfJiFg/V8R9eNDbPJqJgJTHd
+SkgXYdzjWb9SFx1w3ga8Er2PbPH6hUA+jot+NWVsFPE21fEbvTj0/thpJheJLEkFiOn6TuZF
+HFWIdZtChpDWL6vR7kJO8htfC4d+0pjDG2uQhrRiUEZ7Lx+wccSRTvjrF3KCgJwOXZ/PjuGA
+rudUxrZJksscHnGdRcvaothq4rns37e5IhWHOZ20572+2j5gZPYMODfF5a3lFnnvNb5mBG7C
+tXjx3E2p095Rygn7CputibxijilHlSq4TtCe11i8mV7m/2xUUGv1vxdi7ByIt2dfIv7XXsa4
+B4RO+HpCTlXuXoqpmcK0N6f/jTnmfVV8lSf0Rj9q8ZzySJ5a0V3TdcQLZcjwWxE+Yz44WBHE
+UJ6zl5b0fKqxRqAZlwXrae2XN8WDnEjKAW3sDVNN36F4xSnRafb6oA3cJB7q2kFFGCVR4pfT
+dcONnyrHoPVfMGxx2cxlz84QEqr4hlJXoUAPLLmBciSXdUD6UzghVA+w+qRaiEMEzOne4s7s
+MRnuaTy/4BYH278jEoeMd59tA4ekC7Sd4gOGIF/MIx4U/8juG9zZVVj3H+j/coOSMOhXKMYL
+7ubQMiZw6DJq+tA3gLWPn2WqA7ZVy5t7TzEkpj8kYcySkuAwJDcAui2SRRGSSjeidRvbpgla
+unODLWFO1KI0rgxi5OH1jO/Agtd+d2APTRYWr4WfYG3HuAIQq5k7aR4+gWO/oJm/di0EJ6fI
+PIrxPGSakp9HhjPALFSY6MPr8KgqUS/KAMQAfqt1mGK8T/cIg2V8P70j0X73Gtx0VL890cNs
+2FNIvRcHK3pkth1vVM6IdSYCIhLKVfyAZPDyF0OGw2g2sm6RcxkctUe/ruX5Oia83ZJBJf32
+7P1I2AYY5Qqely4SCjVWCkcP8bMq1k/g/oJZRw8WBxynhOOizPTkKi9nlQign7tR65btvB4h
+n8FwimPqtqsWBBhZ80DejayXQqPML17D+myW+h8QxMmj2rhMWzL8sStl+KUfjuFgAg==
+
+/
+show err
+set define '^'

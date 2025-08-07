@@ -1,0 +1,22 @@
+[Unit]
+Description=Oracle ORDS Metrics Service
+After=network.target
+
+[Service]
+# Specify the user and group to run the service under
+User=oracle
+Group=oinstall
+SuccessExitStatus=143
+
+# Create the PID directory
+ExecStartPre=+/bin/mkdir -p /var/run/ords-metrics
+ExecStartPre=+/bin/chown oracle:oinstall /var/run/ords-metrics
+
+# Working directory and the start command
+WorkingDirectory=/opt/oracle/ords
+ExecStart=/opt/oracle/ords/bin/ords-metrics --daemon
+PIDFile=/var/run/ords-metrics/pid
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

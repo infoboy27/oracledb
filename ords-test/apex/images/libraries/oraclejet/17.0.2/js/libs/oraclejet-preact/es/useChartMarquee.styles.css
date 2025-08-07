@@ -1,0 +1,21 @@
+.useChartMarquee_visMarquee__yh8ph20 {
+  stroke: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-dvt-marquee-border);
+  fill: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-dvt-marquee-surface);
+}
+.useChartMarquee_visMarqueeInnerArea__yh8ph21 {
+  fill: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-dvt-marquee-surface);
+  stroke: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-dvt-contrast-line);
+}
+.useChartMarquee_background__yh8ph22 {
+  display: flex;
+  pointer-events: none;
+  background-color: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-surface-neutral0);
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  border-radius: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-border-radius-sm);
+}
+.useChartMarquee_separator__yh8ph23 {
+  width: 1px;
+  background-color: var(--oj-c-EXPERIMENTAL-DO-NOT-USE-border-enabled);
+}

@@ -1,0 +1,2 @@
+define(['exports', 'css!./../../MonthViewStyles.styles.css', '../../vanilla-extract-recipes-createRuntimeFn.esm-d881c69a'], (function(e,t,s){"use strict";var a=s.createRuntimeFn({defaultClassName:"",variantClassNames:{},defaultVariants:{},compoundVariants:[]});e.multiVariantStyles=a,e.styles={doyOfTheWeek:"MonthViewStyles_styles_doyOfTheWeek__11qg3ts0"},e.variants={},Object.defineProperty(e,"__esModule",{value:!0})}));
+//# sourceMappingURL=MonthViewStyles.css.js.map

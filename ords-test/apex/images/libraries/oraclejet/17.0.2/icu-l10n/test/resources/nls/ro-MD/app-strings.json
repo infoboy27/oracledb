@@ -1,0 +1,3 @@
+{
+  "localeParams": "Moldavian total: {total, plural, offset:0 =0 {nici unul} one {# unu} other {# alte}}, gender: {gender}, title: {title}, birthDate: {birthDate, date}"
+}

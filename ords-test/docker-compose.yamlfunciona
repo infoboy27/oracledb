@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  apex-ords:
+    build: .
+    container_name: apex-ords
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - npm_network
+    environment:
+      - DB_HOST=oracle-db
+      - DB_PORT=1521
+      - DB_SERVICE=PDB1
+      - DB_USER=ORDS_PUBLIC_USER
+      - DB_PASSWORD=admin250420
+      - APEX_ADMIN_PASSWORD=admin250420
+
+networks:
+  npm_network:
+    external: true
