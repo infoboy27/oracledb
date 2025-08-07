@@ -1,0 +1,2 @@
+define(['exports', './MultilineText-880bf22f', './utils-2e2a48d1', 'preact/jsx-runtime', './dimensionUtils-61978138'], (function(e,t,i,n,l){"use strict";e.MultilineText=t.MultilineText,e.SinglelineText=t.SinglelineText,e.centerTextInAvailSpace=i.centerTextInAvailSpace,e.getTextInfo=i.getTextInfo,e.getTextProps=i.getTextProps,e.positionMultilineText=i.positionMultilineText,e.truncateMultilineText=i.truncateMultilineText,e.truncateSingleLineText=i.truncateSingleLineText,Object.defineProperty(e,"__esModule",{value:!0})}));
+//# sourceMappingURL=PRIVATE_VisSVGText.js.map

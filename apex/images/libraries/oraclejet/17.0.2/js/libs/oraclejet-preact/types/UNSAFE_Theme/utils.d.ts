@@ -1,0 +1,13 @@
+import type { CSSVarFunction } from '@vanilla-extract/private';
+import { mergeDeepRight as extendThemeContractVars } from 'ramda';
+type RGBType = `rgb(${CSSVarFunction})`;
+type RGBAType = `rgba(${CSSVarFunction}, ${number})`;
+declare const rgb: (rgb: CSSVarFunction) => `rgb(var(--${string}))` | `rgb(var(--${string}, ${string}))` | `rgb(var(--${string}, ${number}))`;
+declare const rgba: (rgb: CSSVarFunction, alpha: number) => RGBAType;
+declare const fallbackVar: (values_0: string, ...values_1: string[]) => CSSVarFunction;
+declare const xUnits: (unit: number) => string;
+declare const densityUnits: (unit: number) => string;
+declare const min: (val: string, minVal: string) => string;
+declare const max: (val: string, minVal: string) => string;
+export { rgb, rgba, xUnits, densityUnits, fallbackVar, min, max, extendThemeContractVars };
+export type { RGBType, RGBAType };

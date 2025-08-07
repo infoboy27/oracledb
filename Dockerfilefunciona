@@ -1,0 +1,35 @@
+FROM tomcat:9.0-jdk17-temurin
+
+# Set environment variables
+ENV ORACLE_HOME=/opt/oracle \
+    APEX_HOME=/opt/apex \
+    ORDS_HOME=/opt/ords \
+    TOMCAT_HOME=/usr/local/tomcat
+
+# Copy Oracle APEX and ORDS
+COPY apex /opt/apex
+COPY ords /opt/ords
+
+# Install system dependencies (remove libaio1 → use libaio-dev)
+RUN apt-get update && \
+    apt-get install -y unzip libaio-dev wget curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# Prepare ORDS configuration directory
+RUN mkdir -p /opt/ords/config
+
+# Generate ORDS config folders and deploy to Tomcat
+WORKDIR $ORDS_HOME
+RUN java -jar ords.war configdir /opt/ords/config && \
+    cp ords.war $TOMCAT_HOME/webapps/ords.war
+
+# Copy APEX static files (images)
+RUN mkdir -p $TOMCAT_HOME/webapps/i && \
+    cp -r /opt/apex/images/* $TOMCAT_HOME/webapps/i/
+
+# Expose HTTP port
+EXPOSE 8080
+
+# Start Tomcat
+CMD ["catalina.sh", "run"]
+

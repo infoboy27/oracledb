@@ -1,0 +1,16 @@
+/**
+ * @license
+ * Copyright (c) %FIRST_YEAR% %CURRENT_YEAR%, Oracle and/or its affiliates.
+ * Licensed under The Universal Permissive License (UPL), Version 1.0
+ * as shown at https://oss.oracle.com/licenses/upl/
+ * @ignore
+ */
+import { ComponentChildren } from 'preact';
+import { MenuValueUpdateDetail } from './menuUtils';
+type SelectMultipleMenuGroupProps = {
+    children: ComponentChildren;
+    value?: string[];
+    onCommit?: (detail: MenuValueUpdateDetail<string[]>) => void;
+};
+export declare function SelectMultipleMenuGroup({ value, onCommit, children }: SelectMultipleMenuGroupProps): import("preact").JSX.Element;
+export {};

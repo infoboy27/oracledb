@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://xmlns.oracle.com/apex/resource-template" 
+         name="ords-plugin-javascript-examples"
+         uri-prefix="javascript-examples">
+    <template pattern="now">
+    <!-- An example of inline javascript which will return the current UTC time as application/json -->
+        <handler method="get" type="text/javascript">
+            <script content-type="application/json">
+                <![CDATA[
+                var data = {now: new Date()};
+                ret = JSON.stringify(data);
+                ]]>
+            </script>
+        </handler>
+    </template>
+    <template pattern="future">
+    <!-- An example of inline javascript which takes a parameter-->
+        <handler method="get" type="text/javascript">
+            <script content-type="application/json">
+                <![CDATA[
+                var now = new Date();
+                var future = new Date(now);
+                
+                // If no value provided, default the days variable to seven
+                if (!days) {
+                   days = 7;
+                }
+                future.setDate(future.getDate() + days);
+                var data = {now: now, future: future, days: days };
+                ret = JSON.stringify(data);
+                ]]>
+            </script>
+	    <parameter name="days" type="Integer"/>
+        </handler>
+    </template>
+    <template pattern="countwords">
+    <!-- 
+    An example of inline javascript which uses implicit parameters 'content_type' and 'body_text' for getting request 
+    values as well as using 'ords_response' to invoke setStatus and setContentType on HttpServletResponse. 
+      -->
+        <handler method="post" type="text/javascript">
+            <script content-type="application/json">
+                <![CDATA[
+                function countWords(s) {
+                    s = s.replace(/(^\s*)|(\s*$)/gi,"");//exclude  start and end white-space
+                    s = s.replace(/[ ]{2,}/gi," ");//2 or more space to 1
+                    s = s.replace(/\n /,"\n"); // exclude newline with a start spacing
+                    return s.split(' ').filter(function(str){return str!="";}).length;
+                }
+                var ret = {};
+                if (content_type == 'application/json') {
+                   var requestBody = JSON.parse(body_text);
+                   if (requestBody.text) {
+                      requestBody['count'] = countWords(requestBody.text);
+                   }
+                   ret = JSON.stringify(requestBody);
+                } else {
+                   /*
+                   Error handling example which will return:
+                   HTTP/1.1 415 Unsupported Media Type
+                   Content-Type: text/plain
+                   Transfer-Encoding: chunked
+
+                   Use application/json
+                   */
+
+                   // Unsupported Media Type status code     
+                   ords_response.setStatus(415);
+                   // Override the content-type defined in handler/script element
+                   ords_response.setContentType('text/plain');
+                   // Whatever this JavaScript returns will be the response body
+                   ret = 'Use application/json';
+                }
+                ret;
+                ]]>
+            </script>
+        </handler>
+    </template>
+    <template pattern="hello">
+    <!-- An example of inline javascript which takes various parameters-->
+        <handler method="get" type="text/javascript">
+            <script content-type="text/plain">
+                <![CDATA[
+                var response = "Hello World!";
+                if (name) {
+                  response = "Hello " + name;
+                }
+                if (agent) {
+                  response = "Hello " + agent;
+                }
+                response;
+                ]]>
+            </script>
+	    <parameter name="agent" type="String" source="Header"/>
+	    <parameter name="name"  type="String" source="URI"/>
+        </handler>
+    </template>
+
+    <template pattern="fibonacci">
+    <!-- An example of external javascript file which takes a parameter-->
+        <handler method="get" type="text/javascript">
+            <script content-type="application/json" src="/js/example.js"/>
+			<parameter name="length" type="Integer"/>
+        </handler>
+    </template>
+</module>

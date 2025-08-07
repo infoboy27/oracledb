@@ -1,0 +1,35 @@
+set define '^' verify off
+prompt ...wwv_flow_credential_dev
+create or replace package body wwv_flow_credential_dev wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+658 2b9
+2KAcpzBuTSOs7d1DYXOPWNDmL4Iwg9fDrxgFfC/NMQ9/nGz64Oa/a5zsdpESBpQyGsoMf630
+bKGoSyEM/d+OM4bVDEpiMRMMKGPH60frEYvtiDuhM/CO5z5yxLi+NCm7lrBtGXN6iigk/8bB
+H+0kNPsmUSh+JlQbPhdpDndf2C/o8wS69uwdAd13xen7gh6OFo1wS6hmEmYGf1GNMpy54Ewg
+9Rt8gBs+PgpChjS3BSobzBhEAW+6OPRYRhvJcnAc9zQusyOnrGRAMXFNP+Y3G4DoNo26TOfi
+fmuZmQ+nNDyxjzRQ73ETLOeC7UN8SwJ5e/TkK0xMoUaL1I1rkVq6bPQak17GmrixmhzTtOlI
+LbT75sUHubUYcuJTQcNylF+R1LG6ZItKVUEtN7NBmlOV8j8duTioxmzMY1jyXKdrcdwVh1aH
+SpFFtjSfkqCYqYF5WpY4gLhKJsWLOd5gASMBjhuY6x4gIAJJUiwjPZ3/csGG3Cz+tzBnoaba
+T+FdqfCT1fAkzP7uFFiftUN08I2jqSR2TA1KQ1C80XGvQctOacfWEY4z++5tOWkmoPHg/AmB
+7gQc4DDkm4jJpfnLtnN8CAO0u3KqG0clRgsf/Rf0dlWUnilUteNdsj6UK7kqIHo+1d0/Krlb
+DbLQ+WQ8BVYFcGvsMvZokNwQhVlDGzrSWzbkGOo=
+
+/
+show errors

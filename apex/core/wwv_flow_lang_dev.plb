@@ -1,0 +1,35 @@
+set define '^' verify off
+prompt ...wwv_flow_lang_dev.plb
+create or replace package body wwv_flow_lang_dev wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+e8d 2ad
+xXLMxZ7+NvKExPg6mSy6bak95ucwg82NuiCsfARAv9dkfZDxL+8YsHViJmmgiI4JGAcKyfrL
+eMmY6/2q5J6E6KnymFbaM6yPscEu73O8/rJrEJmw51nhF0RhBbKqcZ1+OpK5OvSaJH6mX6Bq
+Q9TbyVfKcNMLcjWJ+BYY00JeHeACbmcs+1nddgkSOd7GMArEtxfpVVY8N9ZxBBJ0yLROZU1e
+W/w8N9h7aWTLd2QdsvxnantQTcvbAFroSagO1o6M45XSkLO4Gi5Qjrf1A6WFtJXg/0yWVBpb
+oBFZBDPM7vwoKzxEgB6SG9X9AXtGjpLMN/9ykXq12mO3/9hgmDhGeYRgOJ4CPmN95+mA8rOU
+GOKJFdOeDPKzthhBiVGWjhA+lWcWOQkYa2l0Y47vawQplLK3M0K+7fHARLJqUGrfWX5tC0mM
+Ytkh1bTnMX+VfpWwIeNqNh/YMTmSVITbPkUZVBW2Cmggmjp1w2H4PyPVM+ySIG46EDrBcb5X
+44KgkbU6/o06W9LZTEpV5J9mZ6xZhcnjXWLMP8wTAoJOUKmooxjo3irdSL8neyJ/lD3xzGKk
+PdMJYmw98QliYj3TXmIqPfFOcSOXq13pt1mmXelNVyH6zwGYFWAt+MmwEmrD0rPQFItPf/S3
+f5IQuSI6QtKvU9aLhgrqilUxCw==
+
+/
+show err

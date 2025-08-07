@@ -1,0 +1,17 @@
+/* @oracle/oraclejet-preact: undefined */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+
+
+var baseStyle = 'NavigationListItemStyles_baseStyle__13sgy010';
+var compoundVariants = (function(){var x=[{variants:{selected:'notSelected',hybridHover:'isHybridHover'},style:{selectors:{'&:not(:active)':{backgroundColor:'var(--backgroundColorHover__1497t568)',borderColor:'var(--borderColorHover__1497t569)',color:'var(--labelColorHover__1497t567)'}}}},{variants:{selected:'notSelected',pseudoHover:'isPseudoHover'},style:{'@media':{'(hover: hover)':{selectors:{'&:hover:not(:active)':undefined}}}}},{variants:{selected:'notSelected',active:'isActive'},style:{backgroundColor:'var(--backgroundColorHover__1497t568)',borderColor:'var(--borderColorHover__1497t569)',color:'var(--labelColorHover__1497t567)'}},{variants:{focusRing:'isFocusRing',current:'isCurrent'},style:{outlineStyle:'dotted',outlineOffset:'-1px',outlineWidth:'1px',outlineColor:'var(--oj-c-EXPERIMENTAL-DO-NOT-USE-border-keyboard-focus)'}}];x[1].style['@media']['(hover: hover)'].selectors['&:hover:not(:active)']=x[0].style.selectors['&:not(:active)'];return x;}());
+var styles = {labelContainerClasses:'NavigationListItemStyles_labelContainerClasses__13sgy015',iconContainer:'NavigationListItemStyles_iconContainer__13sgy012',iconLabelContainer:'NavigationListItemStyles_iconLabelContainer__13sgy011',navigationItemMetadata:'NavigationListItemStyles_navigationItemMetadata__13sgy013',navigationlistRemoveIcon:'NavigationListItemStyles_navigationlistRemoveIcon__13sgy014'};
+var variants = {focusRing:{isFocusRing:'',notFocusRing:''},current:{isCurrent:'',notCurrtent:''},selected:{isSelected:{backgroundColor:'var(--backgroundColorSelected__1497t56b)',borderColor:'var(--borderColorSelected__1497t56c)',color:'var(--labelColorSelected__1497t56a)'},notSelected:''},hybridHover:{isHybridHover:'',notHybridHover:''},pseudoHover:{isPseudoHover:'',notPseudoHover:''},active:{isActive:'',notActive:''}};
+
+exports.baseStyle = baseStyle;
+exports.compoundVariants = compoundVariants;
+exports.styles = styles;
+exports.variants = variants;
+//# sourceMappingURL=NavigationListItemStyles.css.js.map

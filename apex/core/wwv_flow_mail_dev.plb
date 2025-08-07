@@ -1,0 +1,48 @@
+set define '^' verify off
+prompt ...wwv_flow_mail_dev.plb
+create or replace package body wwv_flow_mail_dev wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+15ce 641
+Ax8dOOx3ihylLRNBpmqlDf3sn7Awgw1UVSAGVy+dF/memoRE2OV9uQ3jjVllUH3xV8K3JSKT
+fpxVhFFEzEgK+LtynyJz9y+fEj/heoIccuTJixcJirUC6qlvFDDmu7skzsRz7pCdfp8S+TL4
+HTjfwrFlruRWFL2jNdRqqbaXEPEiUuNSBAh0BiEViFlgWtjD58oSAr3ymzD70mGJl+fG3qsC
+IqenDGwMxVnkFiipA8+vz6vol5moDcoU4W4OpqdX0GWg2/MdIVyjjsJuK0BgqF4kYEAD/N2B
+kjeW78LfM3UfOXgxXp6CxMVsHtw9/S2TTdFwlBuXZ1PYle2UKHD3ZGmfKJXocQ1/DcE18fuQ
+X4Pu/aqaQTq51SRuzk7uzpaa5UaQxJbGc4s0pJr8FYCoe7zpVQwb+iWtLM6LMGi7QXjBVe49
+Ze7yMaDjLxQ3U11+w1UrOMqRZkTMGpp3+WkX1Rh21ASijxd9603mzGBuOhb+nInbkCY+kTz+
+Z/sxBJDVZNXES7isN0/rfBIG1fLAMmNCC5iDjr0NXfKa/aZTIIeqFpYxbhlCXi6R3QETmQNZ
+FNcgPYtoiIBkp/aMhGCEpCXLBWgC514eH+BNS6V91uU6zB7f4VZGW1dqz6HAUkA5fGJL6s9S
+gQeYp2TlmpXIOEJLsLw6FNyhZhiUKQ2Dur8N05xMUZ5DwStpuX8CDmwH61BOsrtIBywWzOAN
+kVIOVeHRE/O+PKilMbJR09XqdZapkc4mNKDKnwI9Njx6r391v797YkRkS/DWyokc7lpdxUVw
+mOLl1csWgBnhitu+QODrGNkzXt8rW0sX7zELEhc6WddzidMsrHGgKJ4MnooZyOY9hdB/tu/Z
+Rlgq1wrVAvrlbAXVPA4Vr7Ki4aLODJqr9kxdDujhKGdYNrZOtpHXcLeZoEYqCXAydyLvDaXX
+B8gdjIZfrgUgsM0Fmh/er9mLzTQAiIztjSIM7s1PliBysFWcVR7+YNlZkWSnDo4C6NVk3yBC
+VZC/EwCWlsN2EaLK77x99xEGqd13+lqnRqMBylJlf0mlsE+Q4kh7zAeBaujg+rjv5gnr/uiV
+Dm/geWCz8eue7gtk4h1dZpxL9Z4wdSNm1waF2wejOrW9x/T98BTjez39By4OgzsVyWylBMkD
+kh+yDoM1p1xiab+f9RdV5aMOu2g1ucyxBhCwlYNDOqmYIS5edU5/1mtOS1E/n9e6N7w0RVVF
+FS+i6kIgdPA37Cdu6g/SWwJxQquFhzxcClqRBXrjNUBdHTxAu4VfYQNFluowv40oCtJFz04C
+/m27W/79UTleyqIsNokUZFnhMPULJvTRY0YjrM6UT3sRqqOKniuUqV32hkp4RldxLaN8JXyf
+x9vSKLc5h6uwDYtPc4rEXIleOzUqjMPLbqwqRfSPfEWFJ7xUwkXsJZRd2K/+j/RiteUtSNeg
+1EO00fet9V2oyTF9jvA7B8TBQZ+5vbCYh6HGQQybsPZqIZSqbib0fDxBrJ1y99QO91rY+YSB
+eLN3lXkjT6TL+SMpa7EdX+Kx9NnynUhOkVIpKxF1y2TRG5cMuTyIzJj7ekc/+CjdkPkj
+
+/
+show err
+set define '^'

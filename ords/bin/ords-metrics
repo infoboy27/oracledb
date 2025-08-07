@@ -1,0 +1,31 @@
+#!/bin/bash
+########################################################################
+# Copyright (c) 2024, Oracle and/or its affiliates. All rights reserved.
+# ords-metrics startup script.
+########################################################################
+
+BIN_DIR=$(dirname "$(readlink -f "$0")")
+ORDS_WAR=${BIN_DIR/%\/bin/\/ords.war}
+PID_FILE="/var/run/ords-metrics/pid"
+
+# Start the Java program
+if [ "$1" == "--daemon" ]; then
+    shift
+    # Check if the PID file exists and contains a running process
+    if [ -f "$PID_FILE" ]; then
+        PID=$(cat "$PID_FILE")
+        if ps -p "$PID" > /dev/null; then
+            echo "ords-metrics is already running."
+            exit 1
+        else
+            rm "$PID_FILE"
+        fi
+    fi
+    nohup java -jar "${ORDS_WAR}" metrics "$@" &
+    # Save the PID of the Java process
+    echo $! > "$PID_FILE"
+    echo "ords-metrics started."
+else
+    java -jar "${ORDS_WAR}" metrics "$@"
+fi
+

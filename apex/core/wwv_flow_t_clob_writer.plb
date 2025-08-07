@@ -1,0 +1,37 @@
+set define '^' verify off
+prompt ...wwv_flow_t_clob_writer.plb
+create or replace type body wwv_flow_t_clob_writer wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+e
+8d9 35b
+3NjDtGVtmQTP6BKcYdNwo70HRcMwgztcum2rf465TuQYTk3KUfhUUqi3rYw3dXS+FiJEo6MW
+VlZWDHP4LmUftoDqxHkc20e+XdqavlgL1mmX/Oew6yD+TkOBXRlV/pyxILnSMx5zxv0vTHEk
+w555iWNgxU07DkCh+wdqGT1xHG5SidklpI6CTXAJqSSrQrJVOOEaKsoUjdcIQDFWoypK00WV
+GeWJ8e/zCKM4LlZ4jzhwZHGTMj9R7oN/OLiGf9KXFcDL6007UFRso3Gi+AoznkTr6fT9GzlH
+xxzMgVCd4ozQXBsoL1XgMfo+s+cHYhj77b2cbMr+rEQOTWVOgn08c0Gu4BSCUIAAZJeQnxzd
+btP/sFhrr0yGVxjwMTlqlVpX4ZA2vMV6Sv1oEpXmucw+K38tN6S58nI4jBTp0JlrK+Peoyz6
+sBcAhqc9iO1ZEk7fJOkH7DDPiB1ZBw4aZvy07UFupdOcjjxyWJo+2DiIMoTTOYxHIOfBp8G6
+SLriHQLYHDA9EYO79wWPM9G3aPzNtYxlO+MXDyeTR+oEKFXIKV9Ta570rygwna9QfhqxeMBR
+sf7wrrNUnSBtAz/OJfNP8ZqaLDq3lW8xFC62dgDxgXbvMaHVWduxZfkhocJ8140MurEiUvRq
+tE/r4vW534Ht1Nw64w0f/MWOD+pSal8ZDlISFc2a0iBlKtaPl9iKQe0EZKQQYsL73Qd95GRR
+ulFB4n7QCDk32tqi8+izOtGJ5Q3X3EXDwuFZb1kcECi5uaL9ger/8loBnNri7UJKIXh04RG+
+9Aavy5aQD2Tjfw2h4f8dPsstqmYAkNxPMVFPmslqGu11NAqWqqa1redz
+
+/
+show err

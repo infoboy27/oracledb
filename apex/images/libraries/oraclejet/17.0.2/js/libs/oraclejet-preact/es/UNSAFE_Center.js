@@ -1,0 +1,32 @@
+/* @oracle/oraclejet-preact: undefined */
+export { C as Center } from './Center-2ffc1dcc.js';
+import 'preact/jsx-runtime';
+import './Flex-24628925.js';
+import './useTestId-adde554c.js';
+import './LayerHost-45f545d7.js';
+import 'preact';
+import './Common/themes/redwood/theme.js';
+import './Common/themes/themeContract.css.js';
+import 'preact/compat';
+import 'preact/hooks';
+import './classNames-4e12b00d.js';
+import './boxalignment-486c5ac9.js';
+import './size-782ed57a.js';
+import './utils-6eab3a64.js';
+import './colorUtils-16eb823f.js';
+import './_curry1-25297e59.js';
+import './arrayUtils-35a58161.js';
+import './boxalignment.styles.css';
+import './vanilla-extract-sprinkles-createRuntimeSprinkles.esm-2d655d37.js';
+import './dimensions-5229d942.js';
+import './flexbox-529f25da.js';
+import './flexbox.styles.css';
+import './flexitem-7b7f7920.js';
+import './flexitem.styles.css';
+import './mergeInterpolations-e2db2a66.js';
+import './mergeDeepWithKey-08531060.js';
+import './_curry3-0b4222d7.js';
+import './_curry2-34316bcf.js';
+import './_isObject-1fab0f5b.js';
+import './FlexStyles.styles.css';
+//# sourceMappingURL=UNSAFE_Center.js.map
