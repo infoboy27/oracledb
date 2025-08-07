@@ -10,8 +10,7 @@ RUN apt-get update && \
 # Create ORDS directory
 RUN mkdir -p /opt/ords
 
-# Copy ORDS WAR file and entrypoint script
-COPY ords.war /opt/ords/
+# Copy entrypoint script
 COPY entrypoint.sh /opt/entrypoint.sh
 RUN chmod +x /opt/entrypoint.sh
 
