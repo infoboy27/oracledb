@@ -1,8 +1,7 @@
-# ORDS WAR file (too large for git)
-ords.war
-
-# Docker
-.dockerignore
+# Large ORDS files
+ords/ords.war
+ords-*.zip
+*.war
 
 # Logs
 *.log
