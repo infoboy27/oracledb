@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 version: '3.8'
-=======
->>>>>>> c2a9c4c88f06c1849de2898077980abb28fdc402
 
 services:
   oracle-db:
@@ -9,7 +6,6 @@ services:
     container_name: oracle-db
     restart: unless-stopped
     environment:
-<<<<<<< HEAD
       ORACLE_PASSWORD: admin250420
       ORACLE_DATABASE: orcl
       APP_USER: admin
@@ -22,26 +18,10 @@ services:
   ords:
     build: .
     container_name: ords-test
-=======
-      ORACLE_PASSWORD: ${DB_PASSWORD}
-    ports:
-      - "1521:1521"
-    volumes:
-      - ./apex:/opt/apex
-      - oracle_data:/opt/oracle/oradata
-      - ./db/init.sh:/container-entrypoint-initdb.d/init.sh:ro
-    networks:
-      - apex_net
-
-  apex-ords:
-    build: .
-    container_name: apex-ords
->>>>>>> c2a9c4c88f06c1849de2898077980abb28fdc402
     restart: unless-stopped
     depends_on:
       - oracle-db
     ports:
-<<<<<<< HEAD
       - "8080:8080"
     environment:
       - JAVA_OPTS=-Xmx512m
@@ -51,40 +31,3 @@ services:
 networks:
   ords_net:
     driver: bridge
-=======
-      - "8080:8080" # Solo si necesitas acceso directo
-    environment:
-      DB_HOST: oracle-db
-      DB_PORT: 1521
-      DB_SERVICE: PDB1
-      DB_PASSWORD: ${DB_PASSWORD}
-      APEX_ADMIN_EMAIL: ${APEX_ADMIN_EMAIL}
-      APEX_ADMIN_PASSWORD: ${APEX_ADMIN_PASSWORD}
-    networks:
-      - apex_net
-      - npm_net  # AÑADIDO para que NPM lo vea
-
-  nginx-proxy-manager:
-    image: jc21/nginx-proxy-manager:latest
-    container_name: nginx-proxy-manager
-    restart: unless-stopped
-    ports:
-      - "8081:80"
-      - "8181:81"     # Interfaz de administración de NPM
-      - "4443:443"
-    volumes:
-      - npm_data:/data
-      - npm_letsencrypt:/etc/letsencrypt
-    networks:
-      - npm_net
-
-volumes:
-  oracle_data:
-  npm_data:
-  npm_letsencrypt:
-
-networks:
-  apex_net:
-  npm_net:
-
->>>>>>> c2a9c4c88f06c1849de2898077980abb28fdc402
