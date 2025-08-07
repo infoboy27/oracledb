@@ -1,0 +1,11 @@
+{
+  "welcome": "welcome {name}",
+  "@welcome": {
+    "placeholders": {
+      "name": {
+        "type": "number",
+        "description": "This redefinition should cause the builder to fail"
+      }
+    }
+  }
+}

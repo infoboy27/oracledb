@@ -1,0 +1,138 @@
+/**
+ * Import Compass and Theme Variables
+ */
+
+@import "_variables";
+
+/* ==========================================================================
+   Classic Calendar
+   ========================================================================== */
+
+@fc-Border: contrast(@g_Region-BG, darken(@g_Region-BG,   8%), lighten(@g_Region-BG,   8%),  43%);
+@fc-Body-BG: @g_Region-BG;
+@fc-Body-FG: @g_Region-FG;
+
+@fc-CalHeader-BG: @g_Region-Header-BG;
+@fc-CalHeader-FG: @g_Region-Header-FG;
+
+@fc-BorderRadius: @g_Container-BorderRadius;
+
+/* Calendar Header
+   ========================================================================== */
+.fc.ui-widget {
+  background-color: @fc-Body-BG;
+  border-radius: @fc-BorderRadius;
+}
+
+.fc-toolbar {
+  border-color: @fc-Border;
+  background-color: @fc-Body-BG;
+  border-radius: @fc-BorderRadius @fc-BorderRadius 0 0;
+}
+
+.fc-toolbar h2,
+.fc .fc-basic-view td.fc-day-number,
+.fc .fc-day-number {
+  color: @fc-Body-FG;
+}
+
+.fc-day-header.ui-widget-header,
+.fc-view .ui-widget-header {
+  background-color: contrast(@fc-CalHeader-BG, darken(@fc-CalHeader-BG,   5%), lighten(@fc-CalHeader-BG,   5%),  43%);
+  color: @fc-CalHeader-FG;
+  border-color: contrast(@fc-CalHeader-BG, darken(@fc-CalHeader-BG,   10%), lighten(@fc-CalHeader-BG,   10%),  43%);
+}
+
+div.fc-agendaList {
+  background-color: @fc-Body-BG;
+  border-color: @fc-Border;
+  color: @fc-Body-FG;
+}
+
+.fc .fc-agendaList-dayHeader {
+  background-color: contrast(@fc-CalHeader-BG, darken(@fc-CalHeader-BG,   15%), lighten(@fc-CalHeader-BG,   15%),  43%);
+  color: @fc-CalHeader-FG;
+  border-color: contrast(@fc-Body-BG, darken(@fc-Body-BG,   2%), lighten(@fc-Body-BG,   2%),  43%);
+}
+
+.fc .fc-agendaList-day {
+  color: @fc-CalHeader-FG;
+}
+
+.fc .fc-agendaList-date {
+  color: contrast(@fc-CalHeader-FG, darken(@fc-CalHeader-FG,   15%), lighten(@fc-CalHeader-FG,   15%),  43%);
+}
+
+.fc .fc-agendaList .fc-event-start-time,
+.fc .fc-agendaList .fc-event-all-day {
+  color: contrast(@fc-Body-FG, darken(@fc-Body-FG,   15%), lighten(@fc-Body-FG,   15%),  43%);
+}
+
+body .fc td.fc-today,
+body .fc .ui-widget-content {
+  border-color: contrast(@fc-Body-BG, darken(@fc-Body-BG,   10%), lighten(@fc-Body-BG,   10%),  43%);
+  color: @fc-Body-FG;
+}
+
+body .ui-widget-content.fc-today.ui-state-highlight {
+  background-color: contrast(@fc-Body-BG, darken(@fc-Body-BG,   5%), lighten(@fc-Body-BG,   5%),  43%);
+}
+
+.fc .fc-agendaList-item {
+  border-color: contrast(@fc-Body-BG, darken(@fc-Body-BG,   2%), lighten(@fc-Body-BG,   2%),  43%);
+}
+
+.fc .ui-button:active,
+.fc .ui-button:focus,
+.fc-view:active,
+.fc-view:focus {
+  outline: 1px solid @g_Focus;
+}
+
+.fc-view-container > .fc-view {
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.apex-fullcalendar-5 {
+  --fc-small-font-size: 0.85em;
+  --fc-page-bg-color: @g_Region-BG;
+  --fc-neutral-bg-color: fade(@g_Color-Palette-15, 30%);
+  --fc-neutral-text-color: @g_Region-FG-Light;
+  --fc-border-color: contrast(@g_Region-BG, darken(@g_Region-BG,   12%), lighten(@g_Region-BG,   12%),  43%);
+  --fc-event-bg-color: @g_Color-Palette-1;
+  --fc-event-border-color: @g_Color-Palette-1;
+  // --fc-event-text-color: @g_Region-FG;
+  --fc-event-selected-overlay-color: @_base-alpha-7;
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+  --fc-non-business-color: fade(@g_Color-Palette-14, 30%);
+  --fc-bg-event-color: @g_Color-Palette-5;
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: fade(@g_Color-Palette-15, 30%);
+  --fc-today-bg-color: fade(@g_Color-Palette-15, 15%);
+  --fc-now-indicator-color: @g_Color-Palette-9;
+  --fc-daygrid-event-dot-width: 8px;
+  --fc-list-event-dot-width: 10px;
+  --fc-list-event-hover-bg-color: @_base-shade-1;
+  --fc-button-text-color: @g_Button-Text;
+  --fc-button-bg-color: @g_Button-BG;
+  --fc-button-border-color: contrast(@g_Button-BG, darken(@g_Button-BG,   5%), lighten(@g_Button-BG,   5%),  43%);
+  --fc-button-hover-bg-color: lighten(@g_Button-BG, 10%);
+  --fc-button-hover-border-color: contrast(@g_Button-BG, darken(@g_Button-BG,   5%), lighten(@g_Button-BG,   5%),  43%);
+  --fc-button-active-bg-color: darken(@g_Button-BG, 10%);
+  --fc-button-active-border-color: darken(@g_Button-BG, 10%);
+
+  .fc-list-table .fc-list-event {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  a:not([href]) {
+    color: inherit;
+  }
+}

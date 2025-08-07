@@ -1,0 +1,19 @@
+export type PressOptions = {
+    isDisabled?: boolean;
+    isRepeat?: boolean;
+    repeatDelay?: number;
+    repeatInterval?: number;
+};
+/**
+ * Returns a click handler that can make a target element either clickable or keyboard pressable.
+ *
+ * @param onPressHandler function
+ * @param isRepeat boolean
+ * @param repeatInterval number number of ms between events for mouse and touch
+ * @param repeatDelay number number of ms before repeat events initiates
+ * @param isDisabled boolean
+ * @returns
+ */
+export declare function usePress(onPressHandler: (event: Event) => void, settings?: PressOptions): {
+    pressProps: Record<string, any>;
+};

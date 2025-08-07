@@ -1,0 +1,2 @@
+define(['exports', './HighlightText-ad9bc1f8', 'preact/jsx-runtime', 'css!./HighlightTextStyles.styles.css', './useTestId-82cf22a4', './LayerHost-eab40731', 'preact', './Common/themes/redwood/theme', './Common/themes/themeContract.css', 'preact/compat', 'preact/hooks'], (function(e,t,s,o,c,h,i,r,a,m,g){"use strict";e.HighlightText=t.HighlightText,Object.defineProperty(e,"__esModule",{value:!0})}));
+//# sourceMappingURL=UNSAFE_HighlightText.js.map

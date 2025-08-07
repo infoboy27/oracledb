@@ -1,0 +1,5 @@
+Release Notes for Oracle REST Data Services 25.2.1.r1942034
+----------------------------------------------------
+
+The release notes are available at 
+https://www.oracle.com/tools/ords/ords-relnotes-25.2.0.html

@@ -1,0 +1,41 @@
+set define '^' verify off
+prompt ...wwv_flow_workspace_user_api.plb
+create or replace package body wwv_flow_workspace_user_api wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+b7b 44f
+L7a9mGTRa8JgZI0a17Y78B3M/bwwgz0rTCATfI5Vxz8CDxujPgZrtyvek9Wt1C8Kd8oFRov6
+GKNlaysub4Ng+P6CQKmkbmH3M2Ukovv/ge3BaCjaAn05YARZt3D7n5h4viOju11I7RDY39n4
+5rwrlSvReGypz/VTFV9mNdOecBvJdZ6sDt2PfjZ38gHUf7eOGeBnFnWEQMnITF8F0D5deq5U
+pnEsPQf9QeaRk6ymB3xtRA6TdtbHsgFUkV/hqPCmw3rxOOLI7xWAXnbzJ+BOz9FqV/oBWtYb
+ouYCu8pwVrfZPQ06VxzmEsmrRar1yhLsqzEkQa5gdTmn5bZeua3JFHFaSq1kLP6saiGNFKZq
+Y8MaMc2OA+3dO0MvVagkYrjwGGzy8f2s/QJ3g8GKigWVQ/4M6cbmzYa5CbO8pekfBGpa3mHE
+9jQyNRz0yeAUmAV73etWm5QrzPxO/O2UBcCBgCvpXI0eFyjSMQjf5YN4ws+lgx+GN8JvU1VR
+KgQFBmFH0PkEng5f8y2ljLlkX1Tx3sQk4nFnVop4AD9pnSxkoDEMiB4Jfjph7iibNgKpEcnO
+rWmFtAt6ZdrvFaRaOPxg3526XCb+fZp1VzaGdVBavzjwBcaw2/YVooLPmQHx60VKkD4Ew9gm
+LUxMo962c7w0kI5b5kW63dx5jEjNIEVX+mP0XD95n0hEWhHV3FP/gMEWONYREHhHg4vBDdlZ
+avbM2pjWOdeojFtWAJr+Neehejn+HoELk6lhPd2xnomUMBbqCuC6ep2pnCrOXLyUcjndA8Y7
+7xT9j/yjxzPOcWf3CBlnbMsp5szGxnbUFMjj7g7iqwRO1BzGdiyG1XXsThfsBsmTXB0Ylbux
+Q14B65vcbW0X5z7cy/1VeN3CUk8YMmwnpcFJ8vx1gOpK7AQO1ElTfa4LUK5uN22rAd+pYzer
+qDseqxWasWcdvlkVtaGy7zE/KN4NTWQfFG7PuBsqr0QwfM2ukN2LTGa5SvbPB7jlliG+q7LK
+zB2sCD9ZdqBZbqLCxEtRoXcIP0n8Zzlb+C3viizIJW7K7lO+OzGcZZW+PzE6zdG/LkVw8hsP
++eEu3JWy
+
+/
+show err

@@ -1,0 +1,32 @@
+set define '^' verify off
+prompt ...wwv_http.plb
+create or replace package body wwv_http wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+569 1de
+RMEBAH0Nb5SXVWoJ5QhCNFzJAOUwg80JLdxqfC8B/+poK8VciFTvyHb4JatHkAHaLtpCAZFN
+fbuGGjIR8mnqyFPXcnK7/7tBlJvp2PMnKxJXHCQGBe6lyxUfAwGkDMM7hGlo9zhrj7ypw988
+QPZ1iRuP36YtkZiuwUEtewNsXmeef4piSoqheQK3/e4cm21g/RQIGLZzMR9qNTjvo7dFxNSR
+vc2MG4y9qolNWLIYgnVsqzh6FcJQvE1SOyYEXfUdTMTw8O7iccYXco6kI9mJUzjWw5HXRxh9
+dpglvc1/1/NQ93xJpX7g0RLmt6Ge7gi9bxUG4mhGcNl+EhTLs8Q8wplNb0vYOUQUjTkK3LZK
+8E5xQz0lySv3RS73PUTHwgY3Og0liAdb1ONxJRuYdhHvwjSrvNI3eYqy41r6z1n+c5ZO6uW6
+vol4xz61xzrExz6dQwn5QHEzxkEZ/cNVEOGpnNoz
+
+/
+show errors

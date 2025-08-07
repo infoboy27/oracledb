@@ -1,0 +1,34 @@
+set define '^' verify off
+prompt ...wwv_flow_session_context.plb
+create or replace package body wwv_flow_session_context wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+776 28c
+22TUHU64t1MNDWQkRshbnpQxW8Qwgw2NDyCsfI6V/oqwfRPsV4LEgANsRLmg85nebX1eC3YM
+R1+rOMcsquQtUBhIUtQis+u6/76d348LEkZbqVZyWGtz+Qy8ZN8SiIBSNGjYQ+AD3FG7NjgZ
+VwDPizGPNnQvW6iE0PBT0HnI2zU7OfIHIBhGZqtfYnBNVcp6ZKYpgmU1fA2vH9uMc+AsatZ/
+4sOhFvM7UWHWuRIoru2fnTivqVA0InRJmz2B5implHRFZ+n8zKKFYIJK076aiiIGzc/z+kO6
+A147edArSoTEbVrP1JhKKovxHcHeGkg8ws1j3F5rk8x6QM/VIz81YcVNiksvX1Q3hbETRfen
+3qxVppuwoE0csNusFahpAmmRciG4VaCpew22KbH/HlDjP6Ps9fUrnC0reH11oOITn8QaX3Ml
+/HqRgm1mVCYyP+EW6ObG6j4+7b3JMy8DxrWlDFGBz5B3pd7C7p/2MGPrQs9gBOlkjvhJIh8x
+bSqfBylcsUi8Vcm4yPsu9OcyxRO6tviyXJQ1UsWJkrKZMDGMD1niNOpPUqCCZMNrTbGaqwzJ
+wBxfGA5Lkce2GM3hyZd9wjMfChG8Xp2gizHcsgckElze8EzeXVnVHSYg46O8+PuONIPR
+
+/
+show err

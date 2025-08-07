@@ -1,0 +1,34 @@
+set define '^' verify off
+prompt ...wwv_flow_lov_used_on_pages
+create or replace function wwv_flow_lov_used_on_pages wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+4d5 280
+XGc9qpkLuf1Q9T/nyVnRg+U3buIwg2O3ryeGfC9AEv9eR2sv/axagyVQspPIlK3zhfGI+r0A
+9ALNMwns5t7H+mrq8ZC0LiVQVYGVMMnSHk9ygkJjdZSjr8lOufl6O3i53nO5GYcsP5iBAxI6
+gc6lnr2J0ZwjQ9t0ZxZpXPdSdtKPLE8loe31GG96TWI+wkSVCrU9mYujv8jhwLo4Cih30tx6
+Nd2KbfEeCgjNVwIsXmTvQxToLS6adAdq3GGcCL5pLRax536OdBRADP9WopHUm2VU2cwfS6Ni
+TEknQjhwDY+FOAe/gzUuPXThGpMRlsmftMuhXJe1r2pwhqzx8f9CoFAIx0eSA68w6Ik9aKak
+oDjSzSdDD2NgHnWnXGvKHo5aONhSe78MxdVI0TekVcN4WaGK3+/wXT4M96YFlLnMz8xa+r3j
+wem/1k54ejHEMD/oMdJUTmXGWScUitqyNv70lnkbvM37FeT3cVrZs6QX64So8IKdbDEAX+Tl
+WjvZEDe9TnlhBSLSxLrfZlUiHgKPGaJXCar0dhTqx5hafAJPuBC/eDmYjxKpBNIa6cwU6Jdf
+ldt0YNZpp+j5b+ZanfeNQE8kjrGWeS7jNDFQIz1SJU6z+pVbSNov2Q==
+
+/
+show errors

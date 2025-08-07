@@ -1,0 +1,32 @@
+/*******************
+ * Variants Utility
+ *******************/
+declare const multiVariantStyles: import("@vanilla-extract/recipes").RuntimeFn<{
+    readonly disabled: {
+        readonly isDisabled: "";
+        readonly notDisabled: "";
+    };
+    readonly selected: {
+        readonly isSelected: "";
+        readonly notSelected: "";
+    };
+    readonly readonly: {
+        readonly isReadonly: "";
+        readonly notReadonly: "";
+    };
+    readonly active: {
+        readonly isActive: "";
+        readonly notActive: "";
+    };
+    readonly iconSize: {
+        readonly '4xUnits': {
+            readonly vars: {
+                readonly [x: string]: string;
+            };
+        };
+    };
+}>;
+/*******************
+ * Exports
+ *******************/
+export { multiVariantStyles };

@@ -1,0 +1,92 @@
+set define '^' verify off
+prompt ...apex
+create or replace procedure apex wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+680 34b
+MhBWJIqsI9CrUFAAtNF5PUDCa8cwg9fDLq6GfC9Vx6oCllys22ABlb028VIb9AItYgXeffrm
+IcONDilAKwbBZFXPoGMpQTNLIqKIKddOEoJB9/Iv48dEfQFMP2u4Rmj3K9Y8w7iirQY66x0W
+joSsx8lxhbSV5x6kyFRAQllCJ2zcrxg+FukLZ6K4eXx4TRbo3zhRS/E4t+eBkWOsooBeR8AE
+E1g29ce/GBgJfNoUFo82FXCl7I8Gn7CsMXHaAkkXGJT6S5KUh64btxwFk9oi8NkctyXOiWRq
+emfyOsuht+2f8SWQikcE3v0pnn+S5xYEZM00o42fup3Q1szZi3aQodRGqSF5uZuGAcxhkxsd
+GWOMtV2wxC9qhEFgRCt6fqKMReTtYiR4fTvlE7EN4gqxwLw7DNIr6ixa9jcZCukNVQ5PTeSj
+SKcK6bHr+/xGQ3sDNrd0MwQA68zJkRRqyg8QSLEe5RmJx/XFpgwwIpaPpaNEG+o09K8q9BvE
+jOIFwRx6PeNtyVdKmNLXHUP05x1c/5wyOvxzUS4COT4gUM6CU3q/7pVSRKI3eUgWbY7bw/t/
+3+pW5BLRfLIA9AOffNLBR3YoyP1oIheWxrN7ZU+aurDson9aG8mu3fBEImPyuLWq8rUg1oes
+OfHVJ8nMCrHTqBw+VJoo/n8OV8nNM9p6wg9iv/7NQb52pjJsMTeDcC+xuY05wdbWYBztDYSB
+9/+iCC5u9eVzGGypM0aEH9lhpjlx8oo3r1x85ykrQQdxDy4bNUnitjlyP5ZCTwL2/dPiQvK7
+ujCjikZF5YMi18m5rWWdNQCMLIUFLKqmxN9A/Q==
+
+/
+show err
+prompt ...htmldb
+create or replace procedure htmldb wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+93 be
+YMxFd6+vMOUN9dwwWH+6yJ/+O3Mwgy5fLZ5qygQ52viOtW8D0kTmmey1DC/YGNSDLueke6C6
+GU9aRV1h1obm0u9XgFAX+BCaCo535yqobIakiIDRJCFmfxuNzSV3g4dNFCHJhko0iReQ2JaN
+a07PAUbjzGJwMXNkTCR2a54w+utznySh9o8wU4pUkBtw
+
+/
+show err
+prompt ...htmldb_login
+create or replace procedure htmldb_login wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+cc ef
+QJy7NZXZYAxN0SSZjKqJ77qNdMQwg1zw2Z4VfI6iTP7VwgyZCY6K5aDIIcQqLyDmHMmILzUC
+5f21LPbpszHX1oLU/MuiS2f/0B4wehoIP0VoWkH3oRutuNwnFNO9QKRbDDbSVhYkk2MYX75f
+aspSQcZTru0lf72POBZEBJmkTsrAkpmw6XN4llUrxmgU9P+Cig7enZ0MTjl7KF6W7KfiKUkT
+zejlK5YcDk0frgieV0k=
+
+/
+show err

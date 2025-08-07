@@ -1,0 +1,34 @@
+<project default="dist" name="plugin-javascript">
+ <description>Example of a plugin with the familiar ORDS REST Service module/template/handler structure but for executing JavaScript in the Java Runtie Environment rather than SQL or PL/SQL in the database. The plugin generated requires ORDS to be running on GraalVM with the JS option installed.</description>
+ <path id="compile.deps">
+  <!-- project specific dependencies -->
+  <fileset dir="lib/" erroronmissingdir="false">
+   <include name="**/*.jar" />
+  </fileset>
+  <!-- common plugin dependencies -->
+  <fileset dir="../lib/" erroronmissingdir="false">
+   <include name="**/*.jar" />
+  </fileset>
+ </path> 
+
+ <target name="clean">
+  <delete dir="built" quiet="true" />  
+ </target>
+
+ <target name="compile" depends="clean">
+  <mkdir dir="built/classes" />
+  <javac destdir="built/classes" encoding="UTF-8" debug="true" includeantruntime="false">
+    <classpath>
+     <path refid="compile.deps" />
+   </classpath>
+   <src path="src" />
+  </javac>
+  <copy todir="built/classes">
+    <fileset dir="src" excludes="**/.java"/>
+  </copy>
+ </target>
+ 
+ <target name="dist" depends="clean,compile">
+  <jar destfile="built/${ant.project.name}.jar" basedir="built/classes" />
+ </target>
+</project>

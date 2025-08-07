@@ -1,0 +1,40 @@
+set define '^' verify off
+prompt ...wwv_flow_t_plugin_attributes.plb
+create or replace type body wwv_flow_t_plugin_attributes wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+e
+a75 3fe
+hUvTxbiTtHElXtca468CUY/fAewwg5UrzPYFfC8Zxz+V7ZU3cPJ4K1TeNWFyJhjFiAzchbe4
+xKCO5gkrsBAE+Lu3eTGNtsZGuWsj9GNov7CYu7wDPWU156KgRsTE6nNLGbwp5iRkv9Cu/ZAf
+lbuw+EwtI/tmgBLVjnHlIZmNWqj/ME1Nj0tURzJH2+bVkEt+YL4b8mMhhY7ypWBwp6JvnJ2J
+1oWOuPMYka3nbitToprytmvbAlk2t/x86Y1jNDOhGjGXXybzjYym8NDfQXInpdDVyAwpnHKj
+NsQExTvkRhrTAI/HizHKXgS1OtpAvVnRkBac712zj+mWJGNWvYwJjVfGMNwlpUAawaWzZQ28
+WWWJcuTF4ytRZaWDTSwWaVmtOLgHv/t7lOxrx95yyRuUzCF3IaxqAZt5ih7mVFlGf3/6iBdW
+aoZ1wPYuNxdfKpVfRqeTypRck0KWvlsoRnBaV1OldXz00RzrreisA0NBCl6lpEZgiPE2gZDj
+S0pPfCY+6leCDfalQJG4k0gJdojXp8ZHPFGt/rxBD8+ddYlW6gC7fLucIXdfEpCSruhbYyp3
+nb8o8AV8w+yLO22e/DketTsurhDaG7ky2i7jCase/OZ9LM6lYPhV97RW/FU9MoYygwspbzFU
+y1JwBe1xhZETUH8VJHUFf79P8ejMIfAeEE6K3xOyVAyalAhLd0IrkIGZcyHe/dUelT1Sv489
+OfjmS3ycNtomWWJUYzefkd5mmJzND/qvNH9sIi5U1oeau69aqUfT/kqfKrRdcSdFKdYiPavo
+QPreQHeqwutTrdzQDVd7TbyQkJBcx/wa8hxYgOp8h0qYCaDu1/areRfq4J8vNCzM8PwiWq3S
+yzlBRM2N6AIL9rRhOEY1304fFCpktC27+Di8MX6ZzlidjqXsZL/VFmHIanOfmIdDEz6Kh0Hf
+0KXYqjscm1VFUI3wJJ9EejC91X2vSny75JsS2UM7g7+8HG4oX0BJbQpJhJgm4BA6W6/l7J4=
+
+
+/
+show err

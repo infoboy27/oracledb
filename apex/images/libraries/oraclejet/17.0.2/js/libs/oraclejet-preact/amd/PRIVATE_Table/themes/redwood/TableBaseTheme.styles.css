@@ -1,0 +1,8 @@
+:root, .oj-density-dependent {
+  --oj-c-EXPERIMENTAL-DO-NOT-USE-list-row-height: calc(calc(12 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-size-units, 0.25rem)) + calc(2 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-density-units, 0px)));
+  --oj-c-EXPERIMENTAL-DO-NOT-USE-list-cell-padding-vertical: calc(calc(3 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-size-units, 0.25rem)) + var(--oj-c-EXPERIMENTAL-DO-NOT-USE-density-units, 0px));
+  --oj-c-EXPERIMENTAL-DO-NOT-USE-list-cell-padding-horizontal: calc(calc(4 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-size-units, 0.25rem)));
+  --oj-c-EXPERIMENTAL-DO-NOT-USE-list-header-row-height: calc(calc(13 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-size-units, 0.25rem)) + calc(2 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-density-units, 0px)));
+  --oj-c-EXPERIMENTAL-DO-NOT-USE-list-header-cell-padding-vertical: calc(calc(1.5 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-size-units, 0.25rem)) + var(--oj-c-EXPERIMENTAL-DO-NOT-USE-density-units, 0px));
+  --oj-c-EXPERIMENTAL-DO-NOT-USE-list-header-cell-padding-horizontal: calc(calc(4 * var(--oj-c-EXPERIMENTAL-DO-NOT-USE-size-units, 0.25rem)));
+}

@@ -1,0 +1,40 @@
+set define '^' verify off
+prompt ...z
+create or replace procedure z wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+a35 412
+ERCytQB4IsLieBWQ1uK03tyhMoYwg5BcTCCrfy+Kgp0VKDumvWmEjWCeZvG+ut2XOLphKOaH
+2BaoPgmeJfcWJ40smu2uud0hL52mxoojv5/JrsXuNyzFyqqhjItXNtCga55aOnzc6MNCC+VF
+O3QGzE7zRjpdL0bOfBo4cOco1srGB6t3PjCuWRRDTowIgmviDRocdvTqfDZjZ5M+4YvXKAah
+A2Ay07ZUq+wtaYpv5GX0QlSGgP4Gwem3cTP6ft8NamdH2DmWw0dH2tpr8KutcxqMHg8BD+zt
+2NhVzBoHB7f7TXa24/cdXncpqFuxydgVBM6BE9OCgpzIWwsonlP0tQPeg81EUpiaEg37XwRk
+XMBv7YL/X5UwKoDCiHjtw/R+U64+60ZtXzCCOYdQoNdPT4QQCwBgkQHf4JDJenmGS/DcJUuu
+somG0nHG0G4wzyLTJ4e+SYnTu4/rDvdU6GNqN98IY7TyHtg9ACQg35DEu+pKMQZAcY9GRxgQ
+L26rl1i6e8ALF6R/jN8hVn1f3VQg27gU62BMr6IES3f+XFWT9iJg2glmWc/QOno1HVARYbdG
+cVNFMqN3PAVjnu7UHd51j5FA5jUfOahUoKBp9MDTso1QaHKR6lpyVWg1RByg5jG7UtzjDDW+
+U0vG62y22VExHgJ4HlL4jTahLEr2kl1+nc711VEndD8EUoXkPrd7bE3F5+chz2YB/p2trcAi
+2CIFD6i842OCOOhls2Z8tUHkTRFMN3KOMMkXHiONnMrCNJj0YZ6kMDdQcMZnc3Ux1WUaWoR/
+nnY3hgFRpOGDntNC9QdSJcqBPUWkYhwfzKDj/IAEY18gnXOj2IMoHsQ9XvX+S1fFz6RiT6cK
+tg4pbP6zIwPeTy80vvjtV72102K7DyKkCPrFD+oTmMbp+CojYMRszpd0C3nw8IpacW6twcBz
+NDS1x6H8u7sS73lvHZqrgMxAkj7NCtAhet9gyZID9ATzw36d0pD9ljRoKqRLg+feJkb9aAjO
+GTacL4b4SBIP+fur+DUL
+
+/
+show errors

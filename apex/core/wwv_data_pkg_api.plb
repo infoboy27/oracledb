@@ -1,0 +1,34 @@
+set define '^' verify off
+prompt ...wwv_data_pkg_api.plb
+create or replace package body wwv_data_pkg_api wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+4b0 2d1
+MTgHfe93iwRab5oFDaz2zqmusicwg41eDCCDZy+5MZ3g0ZToUW/Xf+Py9ru0fgOKox4q44dg
+SFrvq6tpDkO7F3Nm3F+SddYNQVggixPql1H9p8pG7GSP9ZIuHgZUUPnuQRhzOVSLTPF3fedC
+SC8ayW7Cei4NLeZsGmqWBJMGR2WaHUk+k2/yFJWL56Tznm9HooLJ4mDw74D0b/SVb7K9jZMb
+AUMEJ2L3JjzQYz69yyDbOibPHFE+qlfUVpw83hp2I+IYCT6kGGaQ1fis5ai3PIdJY1T8AZBm
+JWPyMd8zgY535pJi9PNWnG3U7a/RlerJMMjSrLJJh+P0aYeNil+GBIuhcLJtUCxuW6XHXrLK
+tLkYKqQ/zf6YsIaLCEGfmj9oVRzVLFfNQRzL+AYzy98e9jAkQDUH3EDMSEZMrWbNt9OMTvGB
+uJtbnrqDehxKlZ8MmsSYtj1rTF2Hv3GJxVmL1G+TTaseqgQjzVfYufU0s9RgcnJCHibdwEBI
+9yMUOJIglSH3Nz7LlOWAoO4+Brk5WTh0n0DlAmqqAHS2iKfayunb2FAYUAR55NDqhgjO64Ue
+0Yu+nvrD05EKRwZui3UBuYrkNd5iZAIlExQWnPLeDC2MhVuMP9kT+jiT9npCMRrfrB20j2R4
+MRljoVC87egpwT8dgGRpnOIxa0Xo0Y+bXOqpDOjACnFCgf4yeVaUt79yaM5/Yg==
+
+/

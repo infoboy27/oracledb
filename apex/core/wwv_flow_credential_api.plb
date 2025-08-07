@@ -1,0 +1,45 @@
+set define off verify off
+prompt ...wwv_flow_credential_api.plb
+create or replace package body wwv_flow_credential_api wrapped 
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+b
+1ef1 522
+qSVyXHMaoegzgMvHpP5NICclUaswg82TmiAFyi8Zx/meHLre/GqHjC5mi/FRtLThbqASNT08
+oY3leezogZos1NzhM+4sTLoMTE7nLBdTu5iGSo4hMSWyyFz/4vpqaixOzfnG1jqbHjMezf6a
+v3j+i4vBpO4nN3OeWEnd8r2iN9+eiQa+fPQ2OebH7MXAYcoz6jALYN7lQuBX70aZwoxlvhqb
+avg5VMXIrMlnrCzhVk0J+HHCFshuloph6kvuFWIxu7/JkIsSagMGZr5GkfZ3QANDZm4AzdJR
+tWmQ1gjJliwkazzfPKOpIm06lavjR26d/iSQwJlXP2E60voC5ys3KgoAirNtwdlE52+GUjpx
+9SDu7PWq57iA69OSqbViVTwCC3XipFe214UZoSxQmgDL2Dbinuxnwyh0PKBZKvMB7BwrO760
+qVYUHyPb5a0UKtDs/OkHa1Nuz3EAXQuE3HYzV12G5m92/yzs6LMURMXw/8TKOUY6GvqsNZ6r
+Fbv/+rAF47OxRCG8ZEQ0FP+cvLeSrGio6Ae/zlKW2KB4lKwFOnonlOKe0TU6Z2Aqenl+ksHU
+tnN6et+zs59muVoo/DmYtLeWAIo4L73aW93SCanDcSnFsjTh+qCiOB5rO9mTDb54XCHlEbci
+yl+zRGq0Izh+vnxhozDDLXy+K+MYHjscdYcoj5sjYKhRzX20SPVZrwjQm3VkcwRVJ2D4Rx9J
+tnnfxjPsZE9HN2DTu2bGt1peEsVw6Ikm7HHRzm0d3Eq5JcnAlq2nxrn/wQFkzXTERyx2Gn92
+0n3SO/V7Yr1hGJszB0Rw1ZPgv9+XQjZZDBCTN7aZR9Yj8/sKFJapyPlbbKoEmIFSY5U9QKst
+3NmeeYpKvksHoEM3F5GNwWGktjYF+oM5KMpB8ptWHWtJT7At2yt/ShswGyEVXBDfOGT+N4Tw
+zwxrRGTRiR0d0fJo23/QKwY9wtxnsIYCMzysvvb6udwsdANfmdm9moGg1n8yKD40pAOQHnzF
+/hGgWy0csql7/Jjr+fwwolM9SEWWA6ClLXa2nJy6PJBKljMBAlYz6BD9CDAKCtAz9UYOK4kN
+vXtZeDrCjHWfFZFlljklAcr03ijD6xVsX6ehqOtMj53WaxeKJBdyKuoSYQGOCht+hK7qwzq5
+JBJHRILFgtyXqTXFqkGgH9XDL7B0cxI1hzOuX5NlAg+PytHmLKIKR84WNfDV5ofDb4Gni6oL
+50zHRTessMYnDsk2UiiO/dkn8ad0WacDZUQyzEw3vl1Pr/9UZK9ceXStzEPrQ5idLDNkKg==
+
+
+/
+sho err
+set define '^' 
