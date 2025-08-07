@@ -6,132 +6,163 @@ echo "🚀 Starting ORDS Setup..."
 ORDS_HOME="/opt/ords"
 TOMCAT_HOME="/usr/local/tomcat"
 
-# Download ORDS if not present
-if [ ! -f "$ORDS_HOME/ords.war" ]; then
-    echo "📥 Downloading ORDS..."
+# Function to check if database is ready
+check_database_ready() {
+    echo "🔍 Checking if database is ready..."
+    max_attempts=30
+    attempt=1
     
-    # Try to download ORDS from Oracle (this will likely fail due to authentication)
-    # But we'll create a minimal working setup
-    echo "🔄 Creating minimal ORDS setup..."
+    while [ $attempt -le $max_attempts ]; do
+        echo "📊 Attempt $attempt/$max_attempts - Checking database connection..."
+        
+        # Try to connect to the database using netcat
+        if nc -z oracle-db 1521; then
+            echo "✅ Database port is accessible!"
+            return 0
+        else
+            echo "⏳ Database not ready yet, waiting 10 seconds..."
+            sleep 10
+            attempt=$((attempt + 1))
+        fi
+    done
     
-    # Create a basic WAR structure
-    mkdir -p /tmp/ords-war/WEB-INF
-    mkdir -p /tmp/ords-war/META-INF
+    echo "❌ Database not ready after $max_attempts attempts"
+    return 1
+}
+
+# Check if real ORDS WAR file is available
+if [ -f "./ords.war" ]; then
+    echo "✅ Found real ORDS WAR file"
+    cp ./ords.war "$ORDS_HOME/ords.war"
+    echo "✅ Real ORDS WAR file copied to ORDS home"
     
-    # Create web.xml
-    cat > /tmp/ords-war/WEB-INF/web.xml << 'EOF'
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-         version="3.0">
-    <display-name>Oracle REST Data Services</display-name>
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list>
-</web-app>
+    # Create ORDS configuration directory
+    mkdir -p "$ORDS_HOME/config"
+    cd "$ORDS_HOME"
+    
+    # Check if ORDS is already configured
+    if [ ! -f "$ORDS_HOME/config/ords.conf" ]; then
+        echo "🔧 Configuring ORDS..."
+        
+        # Wait for database to be ready
+        if ! check_database_ready; then
+            echo "❌ Database not ready, exiting..."
+            exit 1
+        fi
+        
+        # Wait additional time for database to be fully open
+        echo "⏳ Waiting for database to be fully open..."
+        sleep 60
+        
+        # First, install ORDS using SYS user to create metadata schema
+        echo "🔧 Installing ORDS using SYS user..."
+        
+        # Create params.properties file for ORDS configuration using SYS user
+        cat > "$ORDS_HOME/params.properties" << 'EOF'
+db.hostname=oracle-db
+db.port=1521
+db.servicename=FREE
+db.username=SYS
+db.password=admin250420
+user.tablespace=USERS
+temp.tablespace=TEMP
 EOF
 
-    # Create index.html
-    cat > /tmp/ords-war/index.html << 'EOF'
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Oracle REST Data Services</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header { background: #007cba; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
-        .status { padding: 15px; border-radius: 5px; margin: 10px 0; }
-        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
-        .warning { background: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
-        .link { color: #007cba; text-decoration: none; }
-        .link:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>🚀 Oracle REST Data Services</h1>
-            <p>ORDS is running successfully!</p>
-        </div>
+        echo "📋 ORDS parameters configured for SYS user:"
+        cat "$ORDS_HOME/params.properties"
         
-        <div class="status success">
-            <h3>✅ ORDS Status: Running</h3>
-            <p>Oracle REST Data Services is now accessible.</p>
-        </div>
+        # Install ORDS with SYS user using new CLI
+        echo "🔧 Installing ORDS with SYS user..."
+        java -jar ords.war install --parameterFile params.properties --silent
         
-        <div class="status info">
-            <h3>📊 Available Services</h3>
-            <ul>
-                <li><strong>ORDS Home:</strong> <a href="/ords/" class="link">/ords/</a></li>
-                <li><strong>APEX (if configured):</strong> <a href="/ords/apex/" class="link">/ords/apex/</a></li>
-                <li><strong>REST Services:</strong> <a href="/ords/" class="link">/ords/</a></li>
-            </ul>
-        </div>
-        
-        <div class="status warning">
-            <h3>⚠️ Configuration Note</h3>
-            <p>This is a minimal ORDS setup. For full functionality, you need to:</p>
-            <ul>
-                <li>Download the official ORDS WAR file from Oracle</li>
-                <li>Configure database connections</li>
-                <li>Set up APEX integration</li>
-            </ul>
-        </div>
-        
-        <div class="status info">
-            <h3>🔧 Next Steps</h3>
-            <p>To get full ORDS functionality:</p>
-            <ul>
-                <li>Download ORDS from Oracle's website</li>
-                <li>Configure database connections</li>
-                <li>Set up APEX integration</li>
-                <li>Configure REST services</li>
-            </ul>
-        </div>
-        
-        <div style="text-align: center; margin-top: 30px; color: #666;">
-            <p>🎉 Oracle REST Data Services</p>
-            <p>Minimal Setup - Ready for Configuration</p>
-        </div>
-    </div>
-</body>
-</html>
+        if [ $? -eq 0 ]; then
+            echo "✅ ORDS installed successfully with SYS user"
+            
+            # Now create the admin user and orcl service
+            echo "🔧 Creating admin user with SYSDBA privileges and orcl service..."
+            
+            # Create a SQL script to set up admin user and orcl service
+            cat > "$ORDS_HOME/setup_admin_orcl.sql" << 'EOF'
+-- Create admin user with SYSDBA privileges
+CREATE USER admin IDENTIFIED BY admin250420;
+
+-- Grant SYSDBA privileges
+GRANT SYSDBA TO admin;
+
+-- Grant necessary privileges
+GRANT CONNECT, RESOURCE TO admin;
+GRANT CREATE SESSION TO admin;
+GRANT CREATE TABLE TO admin;
+GRANT CREATE VIEW TO admin;
+GRANT CREATE PROCEDURE TO admin;
+GRANT CREATE SEQUENCE TO admin;
+GRANT CREATE TRIGGER TO admin;
+GRANT UNLIMITED TABLESPACE TO admin;
+
+-- Grant ORDS metadata access to admin
+GRANT SELECT ON ORDS_METADATA.ORDS_SCHEMAS TO admin;
+GRANT SELECT ON ORDS_METADATA.ORDS_SCHEMAS_VIEW TO admin;
+
+-- Create orcl service
+BEGIN
+  DBMS_SERVICE.CREATE_SERVICE(
+    service_name => 'orcl',
+    network_name => 'orcl'
+  );
+END;
+/
+
+-- Start the orcl service
+BEGIN
+  DBMS_SERVICE.START_SERVICE('orcl');
+END;
+/
+
+COMMIT;
 EOF
 
-    # Create MANIFEST.MF
-    cat > /tmp/ords-war/META-INF/MANIFEST.MF << 'EOF'
-Manifest-Version: 1.0
-Created-By: Oracle REST Data Services
-Implementation-Title: Oracle REST Data Services
-Implementation-Version: 25.2.1.194.2034
-Implementation-Vendor: Oracle Corporation
+            echo "✅ Admin user and orcl service setup script created"
+            
+            # Wait a bit for the service to be fully registered
+            echo "⏳ Waiting for orcl service to be fully registered..."
+            sleep 30
+            
+            # Update params.properties for admin user
+            cat > "$ORDS_HOME/params.properties" << 'EOF'
+db.hostname=oracle-db
+db.port=1521
+db.servicename=orcl
+db.username=admin
+db.password=admin250420
+user.tablespace=USERS
+temp.tablespace=TEMP
 EOF
 
-    # Create WAR file
-    cd /tmp/ords-war
-    zip -r ../ords.war .
-    cd /
+            echo "📋 ORDS parameters updated for admin user:"
+            cat "$ORDS_HOME/params.properties"
+            
+        else
+            echo "⚠️  ORDS installation failed with SYS user, trying interactive mode..."
+            echo "1" | java -jar ords.war install
+        fi
+    else
+        echo "✅ ORDS already configured"
+    fi
     
-    # Copy to ORDS home
-    cp /tmp/ords.war "$ORDS_HOME/ords.war"
-    rm -rf /tmp/ords-war
+    # Start ORDS in standalone mode using new CLI
+    echo "🚀 Starting ORDS in standalone mode..."
+    cd "$ORDS_HOME"
+    java -jar ords.war serve
     
-    echo "✅ ORDS WAR file created"
-fi
-
-# Copy ORDS WAR to Tomcat
-if [ -f "$ORDS_HOME/ords.war" ]; then
-    cp "$ORDS_HOME/ords.war" "$TOMCAT_HOME/webapps/ords.war"
-    echo "✅ ORDS WAR file deployed to Tomcat"
+elif [ -f "$ORDS_HOME/ords.war" ]; then
+    echo "✅ ORDS WAR file already exists"
+    cd "$ORDS_HOME"
+    java -jar ords.war serve
 else
-    echo "❌ ORDS WAR file not found"
-    exit 1
+    echo "📥 No real ORDS found, starting Tomcat without ORDS..."
+    echo "⚠️  Please add ords.war file to get the original ORDS interface"
+    
+    # Don't create any custom WAR, just start Tomcat
+    echo "🚦 Starting Tomcat..."
+    exec catalina.sh run
 fi
-
-echo "🚦 Starting Tomcat..."
-exec catalina.sh run
-
